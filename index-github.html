@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Christian Fellowship · Pittsburgh</title>
+  <meta name="description" content="A monthly gathering of Indian Christian families in the Pittsburgh area for worship, fellowship, and a shared meal. Meeting in Allison Park for over twenty years. All are welcome." />
+
+  <meta property="og:title" content="Indian Christian Fellowship · Pittsburgh" />
+  <meta property="og:description" content="Monthly worship and fellowship for Indian Christians in Pittsburgh. Second Saturday of every month, 6:30 PM, Allison Park. All are welcome." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://icfpittsburgh.org/" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✝</text></svg>" />
+
+  <!-- Fonts: Instrument Serif (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:           #faf7f2;
+      --bg-warm:      #f3ede2;
+      --ink:          #211d18;
+      --ink-soft:     #5a5247;
+      --ink-mute:     #8c8275;
+      --terracotta:   #c2613a;
+      --terracotta-d: #a04d2c;
+      --sage:         #6b7a4a;
+      --gold:         #d4a23a;
+      --line:         #e0d6c4;
+
+      --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+      --sans:  "DM Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-style: italic;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .logo span { color: var(--terracotta); }
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--terracotta);
+      transform: translateY(-1px);
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      padding: 60px 0 100px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-text { position: relative; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--terracotta);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(48px, 6.2vw, 88px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      color: var(--ink);
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .hero-lede {
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .hero-meta-item .label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 6px;
+    }
+    .hero-meta-item .value {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* ============ HERO PHOTO ============ */
+    .hero-photo {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-warm);
+    }
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #f3ede2 0%, #e8dfcc 100%);
+      color: var(--ink-mute);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 16px;
+    }
+    .photo-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 30% 20%, rgba(194, 97, 58, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(107, 122, 74, 0.08) 0%, transparent 50%);
+    }
+    .photo-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+      position: relative;
+      z-index: 1;
+    }
+    .photo-placeholder .ph-label {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+    }
+    .photo-placeholder .ph-hint {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-mute);
+      position: relative;
+      z-index: 1;
+      max-width: 220px;
+      line-height: 1.4;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: var(--bg);
+      padding: 14px 20px;
+      border-radius: 100px;
+      box-shadow: 0 8px 24px rgba(33, 29, 24, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      box-shadow: 0 0 0 4px rgba(107, 122, 74, 0.18);
+    }
+
+    /* ============ SECTION HEADER ============ */
+    .section {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 64px;
+    }
+    .section-eyebrow {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(36px, 4.6vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .section-sub {
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      max-width: 580px;
+    }
+
+    /* ============ ABOUT ============ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-body p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .about-body p + p { margin-top: 1.2em; }
+    .about-body .pullquote {
+      margin-top: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--terracotta);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .langs-card {
+      background: var(--bg-warm);
+      border-radius: 12px;
+      padding: 36px;
+    }
+    .langs-card .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 18px;
+    }
+    .lang-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+    .lang-pills li {
+      padding: 8px 16px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 19px;
+      color: var(--ink);
+    }
+    .lang-pills li:nth-child(odd) { color: var(--terracotta); }
+
+    /* ============ EVENING / SCHEDULE ============ */
+    .schedule {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .schedule-list {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .schedule-list li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .schedule-time {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 19px;
+      color: var(--terracotta);
+    }
+    .schedule-item {
+      font-size: 17px;
+      color: var(--ink);
+    }
+    .schedule-item small {
+      display: block;
+      margin-top: 4px;
+      color: var(--ink-mute);
+      font-size: 14px;
+    }
+
+    .kids-card {
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: 12px;
+      padding: 36px;
+    }
+    .kids-card h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .kids-card h3 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .kids-card p {
+      color: rgba(250, 247, 242, 0.75);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ============ ANNUAL RHYTHM ============ */
+    .rhythm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .rhythm-card {
+      padding: 32px;
+      background: var(--bg-warm);
+      border-radius: 12px;
+      transition: transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .rhythm-card:hover { transform: translateY(-4px); }
+    .rhythm-card .season {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+    .rhythm-card h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .rhythm-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    /* ============ GALLERY ============ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-warm);
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+    }
+    .gallery-item:hover { transform: translateY(-4px); }
+    .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: 4/3; }
+    .gallery-item:nth-child(2) { grid-column: span 2; aspect-ratio: 4/3; }
+    .gallery-item:nth-child(3) { aspect-ratio: 1/1; }
+    .gallery-item:nth-child(4) { aspect-ratio: 1/1; }
+    .gallery-item:nth-child(5) { aspect-ratio: 1/1; }
+    .gallery-item:nth-child(6) { aspect-ratio: 1/1; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-caption {
+      margin-top: 32px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--ink-soft);
+      text-align: center;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============ FIND US (CTA) ============ */
+    .find {
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: 16px;
+      padding: 80px 64px;
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .find h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(36px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--bg);
+    }
+    .find h2 em { font-style: italic; color: var(--gold); }
+    .find p {
+      margin-top: 20px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(250, 247, 242, 0.75);
+    }
+    .find-venue {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(250, 247, 242, 0.15);
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(250, 247, 242, 0.85);
+    }
+    .find-venue strong { color: var(--gold); display: block; font-weight: 500; margin-bottom: 4px; }
+    .find-venue a { color: var(--bg); text-decoration: underline; text-decoration-color: rgba(212, 162, 58, 0.4); }
+    .find-venue a:hover { text-decoration-color: var(--gold); }
+
+    .find-cta { text-align: center; }
+    .find-cta-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .find-cta a {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 34px);
+      color: var(--bg);
+      text-decoration: none;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold);
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+    .find-cta a:hover { color: var(--gold); }
+    .find-cta-note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: rgba(250, 247, 242, 0.55);
+      line-height: 1.5;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      padding: 48px 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: var(--ink-mute);
+    }
+    .footer-mark {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--terracotta);
+      font-size: 18px;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 880px) {
+      .wrap { padding: 0 24px; }
+      nav { padding: 18px 0; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 32px 0 64px;
+      }
+      .hero-photo { aspect-ratio: 4/5; max-width: 480px; margin: 0 auto; width: 100%; }
+      .section { padding: 64px 0; }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .schedule {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .rhythm-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(2) { grid-column: span 2; }
+      .find {
+        grid-template-columns: 1fr;
+        padding: 56px 32px;
+        gap: 32px;
+        text-align: center;
+      }
+      .find-venue { text-align: left; }
+      .hero-meta {
+        flex-direction: column;
+        gap: 20px;
+      }
+      footer {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+    }
+
+    /* ============ ENTRANCE ANIMATION ============ */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-text > *,
+    .hero-photo {
+      animation: rise 0.8s ease-out backwards;
+    }
+    .hero-text .eyebrow { animation-delay: 0.05s; }
+    .hero-text h1       { animation-delay: 0.15s; }
+    .hero-lede          { animation-delay: 0.25s; }
+    .hero-meta          { animation-delay: 0.35s; }
+    .hero-photo         { animation-delay: 0.10s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo">ICF<span>·</span>Pittsburgh</a>
+      <a href="mailto:icfpittsburgh@gmail.com" class="nav-cta">Get in touch</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="wrap hero">
+    <div class="hero-text">
+      <div class="eyebrow">Indian Christian Fellowship · Pittsburgh</div>
+      <h1>A community to <em>worship</em>, a table to <em>share</em>.</h1>
+      <p class="hero-lede">
+        For more than twenty years, Indian Christian families across the Pittsburgh
+        area have gathered once a month for worship, the Word, and a shared meal.
+        Whether you've just arrived in the city or have lived here for years —
+        you're welcome at our table.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="label">When</div>
+          <div class="value">2nd Saturday</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">Time</div>
+          <div class="value">6:30 PM</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">Where</div>
+          <div class="value">Allison Park</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO PHOTO PLACEHOLDER -->
+    <div class="hero-photo">
+      <img src="images/hero.jpg" alt="ICF Pittsburgh fellowship gathering" />
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>Open to all</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="wrap section">
+    <div class="section-header">
+      <div class="section-eyebrow">About us</div>
+      <h2 class="section-title">United by faith, <em>and the city</em> we call home.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-body">
+        <p>
+          Indian Christian Fellowship Pittsburgh is a gathering of families and
+          individuals from across the Indian subcontinent and diaspora — united by
+          faith in Christ and by the simple desire to worship and break bread together.
+        </p>
+        <p>
+          We are not a denomination and we are not a church. We are a fellowship —
+          a volunteer ministry that has met faithfully in the Pittsburgh area for over
+          two decades. First-generation immigrants and second-generation
+          Pittsburghers, students and retirees, lifelong believers and curious
+          newcomers all sit at the same table.
+        </p>
+        <div class="pullquote">
+          "Our gatherings are family gatherings. We have a big family dinner together."
+        </div>
+      </div>
+
+      <div class="langs-card">
+        <div class="label">We worship and fellowship in</div>
+        <ul class="lang-pills">
+          <li>English</li>
+          <li>Malayalam</li>
+          <li>Tamil</li>
+          <li>Telugu</li>
+          <li>Kannada</li>
+          <li>Hindi</li>
+          <li>& others</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT — Evening flow + children's ministry -->
+  <section class="wrap section">
+    <div class="section-header">
+      <div class="section-eyebrow">What an evening looks like</div>
+      <h2 class="section-title">Worship, the Word, <em>and a shared meal.</em></h2>
+      <p class="section-sub">
+        We meet on the second Saturday of every month, beginning at 6:30 PM. A typical
+        evening flows like this — followed by a big potluck dinner together.
+      </p>
+    </div>
+
+    <div class="schedule">
+      <ul class="schedule-list">
+        <li>
+          <span class="schedule-time">6:30 PM</span>
+          <span class="schedule-item">
+            Worship together
+            <small>Songs in many languages — sing along in whichever feels like home.</small>
+          </span>
+        </li>
+        <li>
+          <span class="schedule-time">6:45 PM</span>
+          <span class="schedule-item">
+            Welcome &amp; announcements
+            <small>A short moment to greet newcomers and share community news.</small>
+          </span>
+        </li>
+        <li>
+          <span class="schedule-time">7:00 PM</span>
+          <span class="schedule-item">
+            The Word
+            <small>A message from a pastor or guest speaker — often invited from churches across the region.</small>
+          </span>
+        </li>
+        <li>
+          <span class="schedule-time">7:45 PM</span>
+          <span class="schedule-item">
+            Closing prayer
+          </span>
+        </li>
+        <li>
+          <span class="schedule-time">8:00 PM</span>
+          <span class="schedule-item">
+            Fellowship dinner
+            <small>A potluck of Indian dishes — bring a dish if you can, come hungry if you can't.</small>
+          </span>
+        </li>
+      </ul>
+
+      <div class="kids-card">
+        <h3>Bring the <em>whole family.</em></h3>
+        <p>
+          ICF gatherings are family gatherings. Children and youth have their own
+          ministry running while the adult service is happening — songs, stories, and
+          activities for every age. Then everyone comes together for dinner.
+        </p>
+        <p style="margin-top: 14px;">
+          Expect laughter, a little chaos, and a community that watches out for one
+          another's families.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNUAL RHYTHM -->
+  <section class="wrap section">
+    <div class="section-header">
+      <div class="section-eyebrow">Through the year</div>
+      <h2 class="section-title">A rhythm of <em>worship, food,</em> and celebration.</h2>
+      <p class="section-sub">
+        Beyond the monthly gathering, a few seasons of the year bring something special.
+      </p>
+    </div>
+
+    <div class="rhythm-grid">
+      <div class="rhythm-card">
+        <div class="season">Every month</div>
+        <h3>Saturday Fellowship</h3>
+        <p>
+          Our anchor — second Saturday of every month at 6:30 PM. Worship,
+          a message, prayer, and a fellowship dinner. All are welcome.
+        </p>
+      </div>
+      <div class="rhythm-card">
+        <div class="season">December</div>
+        <h3>Christmas Program</h3>
+        <p>
+          A festive evening of carols, songs, and music as our families
+          come together to celebrate the birth of our Savior. Everyone is invited
+          to share a song or a piece of music.
+        </p>
+      </div>
+      <div class="rhythm-card">
+        <div class="season">August</div>
+        <h3>Summer Picnic</h3>
+        <p>
+          Once a year, we trade the church hall for a park — outdoor worship,
+          games for the kids, and a long, easy afternoon of food and friendship.
+        </p>
+      </div>
+      <div class="rhythm-card">
+        <div class="season">Throughout the year</div>
+        <h3>Guest Speakers &amp; Youth Nights</h3>
+        <p>
+          We regularly invite pastors and speakers from across the Pittsburgh
+          region to share God's Word, and partner with other ministries on
+          multi-lingual youth worship nights.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="wrap section">
+    <div class="section-header">
+      <div class="section-eyebrow">Moments</div>
+      <h2 class="section-title">Twenty years of <em>shared evenings.</em></h2>
+      <p class="section-sub">
+        A glimpse into our gatherings — the worship, the food, the friendships
+        that have grown around our monthly table.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- TO ADD REAL PHOTOS: replace each .photo-placeholder with <img src="images/gallery-N.jpg" alt="..." /> -->
+            <div class="gallery-item">
+        <img src="images/gallery-1.jpg" alt="A moment of worship together" />
+      </div>
+      </div>
+            <div class="gallery-item">
+        <img src="images/gallery-2.jpg" alt="Fellowship dinner at ICF Pittsburgh" />
+      </div>
+      </div>
+            <div class="gallery-item">
+        <img src="images/gallery-3.jpg" alt="Christmas program at ICF Pittsburgh" />
+      </div>
+      </div>
+            <div class="gallery-item">
+        <img src="images/gallery-4.jpg" alt="Youth at the fellowship dinner" />
+      </div>
+      </div>
+            <div class="gallery-item">
+        <img src="images/gallery-5.jpg" alt="The potluck spread at ICF Pittsburgh" />
+      </div>
+      </div>
+            <div class="gallery-item">
+        <img src="images/gallery-6.jpg" alt="The gathered fellowship at ICF Pittsburgh" />
+      </div>
+      </div>
+    </div>
+    <p class="gallery-caption">
+      For the privacy of our community, we keep individual names off this page.
+    </p>
+  </section>
+
+  <!-- FIND US -->
+  <section class="wrap">
+    <div class="find">
+      <div>
+        <h2>New to Pittsburgh? <em>Come and see.</em></h2>
+        <p>
+          Whether you've moved here for school, for work, or to be near family —
+          we'd love to meet you. Send a short note and we'll let you know what to
+          expect at the next gathering.
+        </p>
+        <p style="margin-top: 12px;">There's no membership, no form, no fee. Just show up.</p>
+
+        <div class="find-venue">
+          <strong>Where we meet</strong>
+          Parkwood United Presbyterian Church<br/>
+          4289 Mt. Royal Blvd, Allison Park, PA 15101<br/>
+          <a href="https://maps.app.goo.gl/x7r4wg2tcWFHbvke6" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+      </div>
+      <div class="find-cta">
+        <div class="find-cta-label">Write to us</div>
+        <a href="mailto:icfpittsburgh@gmail.com">icfpittsburgh@gmail.com</a>
+        <p class="find-cta-note">
+          Replies usually come within a day or two.<br/>
+          If you don't hear back, please write again.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="wrap">
+    <footer>
+      <span>© Indian Christian Fellowship · Pittsburgh, PA</span>
+      <span class="footer-mark">soli Deo gloria</span>
+    </footer>
+  </div>
+
+</body>
+</html>
